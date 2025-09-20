@@ -1,332 +1,253 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Gazi Md. Dastagir Noor — Portfolio</title>
-  <meta name="description" content="Portfolio of Gazi Md. Dastagir Noor — software projects, C/C++, SFML games, CTF & hacking learning, academics." />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-    --bg:#0d1422; 
-    --card:#101a2e; 
-    --muted:#a5b4c6; 
-    --accent:#0ea5e9; 
-    --glass: rgba(255,255,255,0.04);
-}
-*{box-sizing:border-box}
-html,body{
-    height:100%;
-    margin:0;
-    font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background:linear-gradient(180deg,#091529 0%, #0d172a 60%);
-    color:#e6eef6;
-}
-.container{
-    max-width:1100px; 
-    margin:40px auto;
-    padding:28px;
-}
-header{
-    display:flex;
-    gap:24px; 
-    align-items:center;
-}
-.avatar {
-  width: 140px;   
-  height: 140px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 22px rgba(12,15,22,0.7);
-  border: 2px solid var(--accent); 
-}
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-h1{
-    margin:0;
-    font-size:28px;
-}
-p.lead{
-    color:var(--muted);
-    margin:8px 0 0;
-}
-nav{
-    margin-top:20px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-.btn{
-    background: var(--accent);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:10px 14px;
-    border-radius:12px;
-    color:#fff;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:500;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 360px;
-    gap:28px; 
-    margin-top:28px;
-}
-.card{
-    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-    padding:22px;
-    border-radius:16px;
-    box-shadow:0 8px 22px rgba(2,6,23,0.7);
-    border:1px solid rgba(255,255,255,0.05);
-    margin-bottom:24px; 
-}
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:12px;
-}
-.skill{
-    background:rgba(255,255,255,0.05);
-    padding:7px 12px;
-    border-radius:999px;
-    font-size:13px;
-    color:var(--muted);
-}
-.projects{
-    display:flex;
-    flex-direction:column;
-    gap:16px; 
-}
-.project{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    padding:14px;
-    border-radius:12px;
-    background:rgba(255,255,255,0.04);
-}
-.project h4{
-    margin:0;
-    font-size:17px;
-}
-.project .tags{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-.tag{
-    font-size:12px;
-    padding:6px 9px;
-    border-radius:6px;
-    background:rgba(255,255,255,0.06);
-    color:var(--muted);
-}
-aside .meta{
-    font-size:13px;
-    color:var(--muted);
-    margin-bottom:10px;
-}
-footer{
-    margin-top:36px;
-    text-align:center;
-    color:var(--muted);
-    font-size:13px;
-}
-
-
-@media (max-width:900px){
-    .grid{
-        grid-template-columns:1fr;
+    :root {
+      --bg: #0a0f1a;
+      --text: #e6eef6;
+      --muted: #94a3b8;
+      --accent: #0ea5e9;
     }
-    .avatar{
-        width:110px;
-        height:110px;
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      font-family:"Outfit", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
     }
-}
+    section {padding:80px 20px; max-width:1100px; margin:auto;}
+    h1,h2,h3 {line-height:1.2;}
 
+    /* Hero */
+    .hero {
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background: radial-gradient(circle at top, #0ea5e930 0%, transparent 70%);
+    }
+    .hero img {
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      border:6px solid var(--accent);
+      box-shadow:0 0 60px rgba(14,165,233,0.8);
+      object-fit:cover;
+      margin-bottom:28px;
+      transition:transform .5s ease, box-shadow .5s ease;
+    }
+    .hero img:hover {
+      transform:scale(1.07) rotate(2deg);
+      box-shadow:0 0 90px rgba(14,165,233,1);
+    }
+    .hero h1 {font-size:48px; font-weight:700;}
+    .hero p {margin-top:12px; color:var(--muted); font-size:18px; max-width:700px;}
+    nav {
+      margin-top:32px;
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .btn {
+      background:var(--accent);
+      color:#fff;
+      padding:12px 24px;
+      border-radius:30px;
+      font-weight:600;
+      text-decoration:none;
+      transition:.3s;
+    }
+    .btn:hover {background:#38bdf8; transform:translateY(-4px);}
 
-.project:hover{
-    transform:translateY(-4px);
-    transition:transform .2s ease;
-}
-.download{
-    display: inline-flex;
-    align-items: center;
-    background: var(--accent);
-    margin-top:12px;
-}
-.lang-toggle{margin-left:auto}
+    /* Section titles */
+    h2 {
+      font-size:32px;
+      margin-bottom:40px;
+      position:relative;
+      display:inline-block;
+    }
+    h2::after {
+      content:"";
+      position:absolute;
+      bottom:-8px;
+      left:0;
+      width:50%;
+      height:3px;
+      background:var(--accent);
+      border-radius:2px;
+    }
 
-.btn {
-    transition: all 0.25s ease;
-}
-.btn:hover {
-    background: #38bdf8; 
-    transform: translateY(-3px) scale(1.05); 
-    box-shadow: 0 6px 18px rgba(14,165,233,0.4);
-}
+    /* About */
+    .about p {font-size:18px; color:var(--muted); line-height:1.8;}
 
+    /* Skills */
+    .skills-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+      gap:20px;
+    }
+    .skill {
+      background:rgba(255,255,255,0.05);
+      padding:14px;
+      border-radius:14px;
+      text-align:center;
+      font-weight:600;
+      color:var(--muted);
+      transition:.3s;
+    }
+    .skill:hover {background:var(--accent); color:#fff; transform:scale(1.1);}
 
-.skill {
-    transition: all 0.25s ease;
-    cursor: pointer;
-}
-.skill:hover {
-    background: var(--accent);
-    color: #fff;
-    transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 4px 12px rgba(14,165,233,0.4);
-}
+    /* Projects */
+    .projects-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
+    }
+    .project {
+      background:rgba(255,255,255,0.04);
+      border-radius:16px;
+      padding:24px;
+      transition:.3s;
+    }
+    .project:hover {transform:translateY(-8px); background:var(--accent); color:#fff;}
+    .project h3 {margin-bottom:10px; font-size:20px;}
+    .tags {display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+    .tag {
+      font-size:13px;
+      padding:6px 10px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.12);
+      color:var(--muted);
+    }
 
+    /* Contact */
+    .contact {
+      text-align:center;
+    }
+    .contact p {margin:10px 0; font-size:17px;}
+    .contact a {color:var(--accent); text-decoration:none;}
+    .contact a:hover {text-decoration:underline;}
 
-.tag {
-    transition: all 0.25s ease;
-    cursor: pointer;
-}
-.tag:hover {
-    background: var(--accent);
-    color: #fff;
-    transform: scale(1.1);
-}
+    footer {
+      text-align:center;
+      padding:30px;
+      color:var(--muted);
+      font-size:14px;
+      margin-top:60px;
+    }
 
-
-.card {
-    transition: all 0.25s ease;
-}
-.card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 8px 24px rgba(14,165,233,0.25);
-    transform: translateY(-4px);
-}
-
+    /* Animations */
+    [data-animate] {opacity:0; transform:translateY(40px); transition:all .8s ease;}
+    [data-animate].visible {opacity:1; transform:translateY(0);}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="avatar">
-        <img src="https://drive.google.com/thumbnail?id=1m15qyReZdZ8FW5LVifA_-lJZeA5urINu&sz=w800" alt="Gazi Md. Dastagir Noor">
-      </div>
-      <div style="flex:1">
-        <h1>Gazi Md. Dastagir Noor</h1>
-        <p class="lead">Software developer • C / C++ / SFML • Beginner-friendly hacking / CTF learner • Student — International Islamic University Chittagong</p>
-        <nav>
-          <a class="btn" href="#about">About</a>
-          <a class="btn" href="#projects">Projects</a>
-          <a class="btn" href="#skills">Skills</a>
-          <a class="btn" href="#contact">Contact</a>
-          <a class="btn download" href="#resume" onclick="downloadResume()">Download Resume</a>
-        </nav>
-      </div>
-    </header>
+  <!-- Hero -->
+  <section class="hero">
+    <img src="https://drive.google.com/thumbnail?id=1m15qyReZdZ8FW5LVifA_-lJZeA5urINu&sz=w1600" alt="Gazi Md. Dastagir Noor">
+    <h1>Gazi Md. Dastagir Noor</h1>
+    <p>Software Developer • C / C++ / SFML • Beginner CTF Learner • Student at International Islamic University Chittagong</p>
+    <nav>
+      <a class="btn" href="#about">About</a>
+      <a class="btn" href="#skills">Skills</a>
+      <a class="btn" href="#projects">Projects</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
+  </section>
 
-    <div class="grid">
-      <main>
-        <section id="about" class="card">
-          <h2>About</h2>
-          <p style="color:var(--muted);margin-top:8px">Hello — I'm Dastagir. I study in Computer Science and Engineering at International Islamic University Chittagong. I enjoy systems programming in C and C++, making graphical projects using SFML (games and GUI apps), and preparing for beginner CTFs and ethical hacking. I prefer clear, practical projects and learn by building.</p>
-          <div style="margin-top:14px">
-            <strong>Highlights</strong>
-            <ul style="color:var(--muted);margin:8px 0 0 18px">
-              <li>Strong fundamentals in C/C++ and data structures</li>
-              <li>Graphical apps & games with SFML (keyboard input, sprites, HP bars)</li>
-              <li>Building projects: Bus Reservation System (C++ + SFML), Turn-based RPG</li>
-              <li>Preparing for CTFs and learning practical Linux tools</li>
-            </ul>
-          </div>
-        </section>
+  <!-- About -->
+  <section id="about" class="about" data-animate>
+    <h2>About Me</h2>
+    <p>Hello — I'm Dastagir. I study Computer Science and Engineering at International Islamic University Chittagong. I enjoy systems programming in C and C++, making graphical projects with SFML, and preparing for beginner CTFs and ethical hacking.</p>
+    <ul style="margin-top:20px; color:var(--muted); padding-left:20px; font-size:17px;">
+      <li>Strong fundamentals in C/C++ and data structures</li>
+      <li>Graphical apps & games with SFML (keyboard input, sprites, HP bars)</li>
+      <li>Projects: Bus Reservation System, Turn-based RPG</li>
+      <li>Preparing for CTFs and Linux tools</li>
+    </ul>
+  </section>
 
-        <section id="projects" class="card" style="margin-top:16px">
-          <h2>Selected Projects</h2>
-          <div class="projects" style="margin-top:8px">
-            <div class="project">
-              <h4>Bus Reservation System — C++ + SFML</h4>
-              <div class="tags"><span class="tag">C++</span><span class="tag">SFML</span><span class="tag">GUI</span><span class="tag">Seats selection</span></div>
-              <p style="color:var(--muted);margin:6px 0 0">A graphical bus reservation app with visual seat selection, keyboard & mouse support, and persistent booking data. Includes admin console and printable tickets.</p>
-            </div>
-
-            <div class="project">
-              <h4>Turn-based RPG (demo)</h4>
-              <div class="tags"><span class="tag">C++</span><span class="tag">SFML</span><span class="tag">OOP</span><span class="tag">Game</span></div>
-              <p style="color:var(--muted);margin:6px 0 0">Simple RPG engine demonstrating classes, turn order, HP bars, and keyboard-only controls. Focused on clean OOP design suitable for expansion.</p>
-            </div>
-
-            <div class="project">
-              <h4>LeetCode & DS Solutions</h4>
-              <div class="tags"><span class="tag">Algorithms</span><span class="tag">C++</span><span class="tag">Linked List</span></div>
-              <p style="color:var(--muted);margin:6px 0 0">Well-documented solutions for common problems (linked list operations, cycle detection, matrix transforms) intended for learning and interview prep.</p>
-            </div>
-
-            <div class="project">
-              <h4>CTF Tools</h4>
-              <div class="tags"><span class="tag">Linux</span><span class="tag">Tools</span><span class="tag">Beginner</span></div>
-              <p style="color:var(--muted);margin:6px 0 0">Collection of notes and scripts that help practice web1, pwn basics, and reconnaissance. Guides on setting up VMs and common commands.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="writing" class="card" style="margin-top:16px">
-          <h2>Academic & Writing</h2>
-          <p style="color:var(--muted);margin-top:8px">I have prepared coursework and assignments on C++ and other programming languages and technical topics.</p>
-        </section>
-
-      </main>
-
-      <aside>
-        <div class="card">
-          <h3>Quick Info</h3>
-          <div class="meta">Location: Bangladesh</div>
-          <div class="meta">Education: Ongoing BSc. in Computer Science and Engineering</div>
-          <div class="meta">Language: Bengali & English</div>
-          <div style="margin-top:10px">
-            <strong>Skills</strong>
-            <div class="skills" id="skills">
-              <div class="skill">C</div>
-              <div class="skill">C++</div>
-              <div class="skill">SFML</div>
-              <div class="skill">OOP</div>
-              <div class="skill">Data Structures</div>
-              <div class="skill">Linux</div>
-              <div class="skill">CTF Basics</div>
-              <div class="skill">HTML/CSS/JS</div>
-            </div>
-          </div>
-
-          <div style="margin-top:12px">
-            <strong>Contact</strong>
-            <div style="color:var(--muted);margin-top:6px">Email: <a href="mailto:gazi.dastagir.noor.cs@gmail.com" style="color:var(--accent)">gazi.dastagir.noor.cs@gmail.com</a></div>
-            <div style="color:var(--muted);margin-top:6px">GitHub: <a href="https://github.com/gm-dst" style="color:var(--accent)">github.com/gm-dst</a></div>
-            <div style="color:var(--muted);margin-top:6px" id="contact">Phone: +880-1637702931</div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h3>Goals & Interests</h3>
-          <p style="color:var(--muted);margin-top:8px;margin-bottom:0">Short-term: Providing and contributing in research papers. Long-term: Become proficient in systems programming and competitive CTFs.</p>
-        </div>
-      </aside>
+  <!-- Skills -->
+  <section id="skills" data-animate>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">C</div>
+      <div class="skill">C++</div>
+      <div class="skill">SFML</div>
+      <div class="skill">OOP</div>
+      <div class="skill">Data Structures</div>
+      <div class="skill">Linux</div>
+      <div class="skill">CTF Basics</div>
+      <div class="skill">HTML/CSS/JS</div>
     </div>
+  </section>
 
-    <footer>
-      <div>Presented by Gazi Md. Dastagir Noor</div>
-    </footer>
-  </div>
+  <!-- Projects -->
+  <section id="projects" data-animate>
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <h3>Bus Reservation System — C++ + SFML</h3>
+        <p>A graphical bus reservation app with seat selection, keyboard & mouse support, and persistent booking data.</p>
+        <div class="tags"><span class="tag">C++</span><span class="tag">SFML</span><span class="tag">GUI</span></div>
+      </div>
+      <div class="project">
+        <h3>Turn-based RPG (demo)</h3>
+        <p>RPG engine with turn order, HP bars, and keyboard-only controls. Clean OOP design for expansion.</p>
+        <div class="tags"><span class="tag">C++</span><span class="tag">SFML</span><span class="tag">OOP</span></div>
+      </div>
+      <div class="project">
+        <h3>LeetCode & DS Solutions</h3>
+        <p>Well-documented solutions for linked list, matrix transforms, and interview prep.</p>
+        <div class="tags"><span class="tag">Algorithms</span><span class="tag">C++</span></div>
+      </div>
+      <div class="project">
+        <h3>CTF Tools</h3>
+        <p>Scripts & notes for web1, pwn basics, reconnaissance, plus VM setup guides.</p>
+        <div class="tags"><span class="tag">Linux</span><span class="tag">Tools</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="message" class="contact-form" data-animate>
+    <h2>Send Me a Message</h2>
+    <p style="color:var(--muted); margin-bottom:30px;">Feel free to share your thoughts, inquiries, or opportunities. I’ll get back to you as soon as possible.</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="max-width:600px;margin:auto;display:flex;flex-direction:column;gap:18px;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding:14px;border-radius:10px;border:none;outline:none;background:rgba(255,255,255,0.05);color:#fff;">
+      <input type="email" name="email" placeholder="Your Email" required style="padding:14px;border-radius:10px;border:none;outline:none;background:rgba(255,255,255,0.05);color:#fff;">
+      <input type="text" name="contact" placeholder="Your Contact Info (optional)" style="padding:14px;border-radius:10px;border:none;outline:none;background:rgba(255,255,255,0.05);color:#fff;">
+      <textarea name="message" placeholder="Your Message..." rows="5" required style="padding:14px;border-radius:10px;border:none;outline:none;background:rgba(255,255,255,0.05);color:#fff;"></textarea>
+      <button type="submit" style="padding:14px;border:none;border-radius:30px;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;transition:.3s;">Send Message</button>
+    </form>
+  </section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="contact" data-animate>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:gazi.dastagir.noor.cs@gmail.com">gazi.dastagir.noor.cs@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/gm-dst">github.com/gm-dst</a></p>
+    <p>Phone: +880 1637-702931</p>
+  </section>
+
+  <footer>Gazi Md. Dastagir Noor — Code with passion!</footer>
 
   <script>
-    function downloadResume(){
-      const content = `Resume - Gazi Md. Dastagir Noor\n\nEducation:\n- Morality Development Program (MDP), IIUC - 2nd semester\n\nSkills:\n- C, C++, SFML, Linux, Data Structures, OOP\n\nProjects:\n- Bus Reservation System (C++ + SFML)\n- Turn-based RPG (SFML)\n- LeetCode solutions`;
-      const blob = new Blob([content], {type: 'text/plain'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'Gazi_Noore_Resume.txt';
-      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    }
+    const elements=document.querySelectorAll("[data-animate]");
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add("visible");}
+      });
+    },{threshold:0.2});
+    elements.forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>
